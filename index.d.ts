@@ -1,6 +1,5 @@
 
-declare namespace AwesomePhonenumber
-{
+declare namespace AwesomePhonenumber {
 	type PhoneNumberFormat =
 		'e164' |
 		'international' |
@@ -22,35 +21,34 @@ declare namespace AwesomePhonenumber
 		'unknown';
 
 
-	class PhoneNumber
-	{
-		constructor( phoneNumber: string, countryCode?: string );
+	class PhoneNumber {
+		constructor(phoneNumber: string, countryCode?: string);
 
-		isValid( ): boolean;
-		canBeInternationallyDialled( ): boolean;
-		isPossible( ): boolean;
-		getType( ): PhoneNumberTypes;
-		isMobile( ): boolean;
-		isFixedLine( ): boolean;
-		getNumber( type?: PhoneNumberFormat ): string;
-		getNumberFrom( regionCode: string ): string;
-		getRegionCode( ): string;
-		toJSON( ): any;
+		isValid(): boolean;
+		canBeInternationallyDialled(): boolean;
+		getLengthOfGeographicalAreaCode(): number;
+		isPossible(): boolean;
+		getType(): PhoneNumberTypes;
+		isMobile(): boolean;
+		isFixedLine(): boolean;
+		getNumber(type?: PhoneNumberFormat): string;
+		getNumberFrom(regionCode: string): string;
+		getRegionCode(): string;
+		toJSON(): any;
 
-		static getCountryCodeForRegionCode( regionCode: string ): number;
-		static getRegionCodeForCountryCode( countryCode: number ): string;
-		static getSupportedCallingCodes( ): string[ ];
-		static getExample( regionCode: string, type?: PhoneNumberTypes ): PhoneNumber;
-		static getAsYouType( regionCode: string ): AsYouType;
+		static getCountryCodeForRegionCode(regionCode: string): number;
+		static getRegionCodeForCountryCode(countryCode: number): string;
+		static getSupportedCallingCodes(): string[];
+		static getExample(regionCode: string, type?: PhoneNumberTypes): PhoneNumber;
+		static getAsYouType(regionCode: string): AsYouType;
 	}
 
-	class AsYouType
-	{
-		addChar( char: string ): string;
-		number( ): string;
-		removeChar( ): string;
-		reset( number?: string ): string;
-		getPhoneNumber( ): PhoneNumber;
+	class AsYouType {
+		addChar(char: string): string;
+		number(): string;
+		removeChar(): string;
+		reset(number?: string): string;
+		getPhoneNumber(): PhoneNumber;
 	}
 }
 
